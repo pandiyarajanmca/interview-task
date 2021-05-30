@@ -1,0 +1,155 @@
+<mat-drawer-container class="example-container nav" autosize>
+    <mat-drawer #drawer class="example-sidenav sidenavbar" mode="side">
+        <h3 class="sidenav-title">Project Management</h3>
+        <ul class="user">
+            <li>
+                <img class="user-img" src="/assets/img/user.png" alt="logo">
+            </li>
+            <li>
+                <p>Admin</p>
+                <p style="color: #ea5353;">Logout</p>
+            </li>
+        </ul>
+        <ul class="menu-list">
+            <li class="active" routerLink="/dashboard">
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                <span>Dashboard</span>
+            </li>
+            <li routerLink="/resources">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span>Resources</span>
+            </li>
+            <li routerLink="/tasks">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                <span>Tasks</span>
+            </li>
+        </ul>
+    </mat-drawer>
+    <div class="container-fluid">
+        <div class="row header m-b-40">
+            <div class="navicon">
+                <div class="col-xs-12 col-sm-4">
+                    <button type="button" mat-button (click)="drawer.toggle()" style="border: none;">
+                        <span class="material-icons menu-icon" style="vertical-align: middle;"> menu </span>
+                        <h1> Dashboard</h1>
+                    </button>
+                </div>
+                <div class="col-xs-12 col-sm-8 headerright">
+                    <div class="dropdown menu-select">
+                        <button type="button" class="btn btn-outline-dark text-dark btn-sm dropdown-toggle"
+                            data-toggle="dropdown">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Add Widgets
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">Resources Screen</a>
+                            <a class="dropdown-item">Dashboard</a>
+                            <a class="dropdown-item">Tasks screen</a>
+                        </div>
+                    </div>
+                    <div class="dropdown menu-select">
+                        <button type="button" class="btn btn-outline-dark text-dark btn-sm dropdown-toggle"
+                            data-toggle="dropdown">
+                            <i class="fa fa-bell-o" aria-hidden="true"></i> 5 Notifications
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">Resources Screen</a>
+                            <a class="dropdown-item">Dashboard</a>
+                            <a class="dropdown-item">Tasks screen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header select-header">
+                            <span class="header-title ">Tasks</span>
+                            <div class="dropdown select-title">
+                                Filter tasks on Status
+                                <button type="button" class="btn btn-outline-dark btn-sm dropdown-toggle"
+                                    data-toggle="dropdown">
+                                    In progress
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item">Resources Screen</a>
+                                    <a class="dropdown-item">Dashboard</a>
+                                    <a class="dropdown-item">Tasks screen</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>Task</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                    </tr>
+                                    <tr *ngFor="let item of dashboard">
+                                        <td>{{item.task}}</td>
+                                        <td>{{item.startdate}}</td>
+                                        <td>{{item.enddate}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer select-footer"></div>
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top: 20px;">
+                    <div class="card">
+                        <div class="card-header select-header"><span class="header-title">Performance</span>
+                            <div class="dropdown select-title">
+                                Filter tasks assinged to
+                                <button type="button" class="btn btn-outline-dark btn-sm dropdown-toggle"
+                                    data-toggle="dropdown">
+                                    In Progress
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item">In Progress</a>
+                                    <a class="dropdown-item">Completed</a>
+                                    <a class="dropdown-item">Assigned</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>Task</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    <tr *ngFor="let perform of performance">
+                                        <td>{{perform.task}}</td>
+                                        <td>{{perform.status}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer select-footer"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <div class="card-header select-header header-title">
+                        Tasks Status
+                    </div>
+                    <div class="card-body">
+                        <div style="display: block;">
+                            <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+                                [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+                            </canvas>
+                        </div>
+                    </div>
+                    <div class="card-footer" style="color: gray;">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i> Tasks Status
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</mat-drawer-container>

@@ -1,0 +1,35 @@
+.table {
+    margin: auto;
+  }
+  .container-fluid {
+    background: #eeeeee;
+  }
+  .select-header {
+    color: #000;
+    background: #fff;
+    padding-bottom: 23px;
+    border-bottom: none;
+  }
+  .select-footer {
+    padding-bottom: 23px;
+    background: #fff;
+  }
+  .select-title {
+    color: gray;
+  }
+  .select-btn {
+    background: #fff;
+    border-color: #222;
+    color: #222;
+  }
+  .header-title {
+    font-size: 17px;
+  }
+  .card {
+    margin-bottom: 10px;
+  }
+  .table-btn li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  

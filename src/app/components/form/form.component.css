@@ -1,0 +1,17 @@
+.loginform {
+    width: 50%;
+    margin: auto;
+    background: #fff;
+  }
+  .loginform button {
+    width: 87px;
+    margin: 10px 10px;
+  }
+  .model-btn button {
+    margin: 0 7px;
+  }
+  .table-btn li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  

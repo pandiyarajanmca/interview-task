@@ -1,0 +1,33 @@
+.container-fluid {
+    background: #eeeeee;
+  }
+  table tr th {
+    background: #fff;
+  }
+  table tr:nth-child(even) {
+    background: #dddddd;
+  }
+  .select-header {
+    color: #000;
+    background: #fff;
+    padding-bottom: 23px;
+  }
+  .select-footer {
+    padding-bottom: 23px;
+    background: #fff;
+  }
+  .select-title {
+    color: gray;
+  }
+  .select-btn {
+    background: #fff;
+    border-color: #222;
+    color: #222;
+  }
+  .header-title {
+    font-size: 17px;
+  }
+  .card {
+    margin-bottom: 10px;
+  }
+  
